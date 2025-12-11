@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yohan — Official Website</title>
+
+  <style>
+    :root {
+      --pink:#ff7bcf;
+      --purple:#9f6aff;
+      --soft-bg:#fff7fd;
+      --soft-bg2:#f9f4ff;
+      --text:#3b2c4f;
+      --muted:#8a819c;
+      --card:#ffffffaa;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Inter",sans-serif;}
+
+    body{
+      background:linear-gradient(135deg,var(--soft-bg),var(--soft-bg2));
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    /* === NAVBAR === */
+    nav{
+      width:100%;
+      padding:20px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      left:0;
+      background:rgba(255,255,255,0.6);
+      backdrop-filter:blur(10px);
+      z-index:10;
+    }
+
+    nav .logo{
+      font-size:22px;
+      font-weight:800;
+      background:linear-gradient(90deg,var(--pink),var(--purple));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    nav a{
+      margin-left:26px;
+      text-decoration:none;
+      font-weight:600;
+      color:var(--text);
+      font-size:14px;
+    }
+    nav a:hover{color:var(--pink)}
+
+    /* === HERO SECTION === */
+    .hero{
+      width:100%;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:120px 40px 80px;
+      gap:60px;
+      flex-wrap:wrap;
+    }
+
+    .hero-img{
+      width:240px;
+      height:240px;
+      border-radius:40px;
+      background:linear-gradient(135deg,#ffd7f4,#e9d8ff);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:60px;
+      font-weight:900;
+      color:#c13fa4;
+      box-shadow:0 15px 35px rgba(0,0,0,0.12);
+    }
+
+    .hero-text{
+      max-width:520px;
+    }
+
+    .hero-text h1{
+      font-size:48px;
+      font-weight:800;
+      line-height:1.2;
+      background:linear-gradient(90deg,var(--pink),var(--purple));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero-text p{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:17px;
+    }
+
+    .cta-primary{
+      display:inline-block;
+      margin-top:22px;
+      padding:14px 30px;
+      background:linear-gradient(90deg,var(--pink),var(--purple));
+      border-radius:16px;
+      color:white;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:0 8px 20px rgba(255,120,220,0.25);
+    }
+
+    /* === SECTION WRAPPER === */
+    section{
+      width:100%;
+      padding:80px 40px;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:32px;
+      font-weight:800;
+      color:#6a4ca0;
+      margin-bottom:40px;
+    }
+
+    /* === SERVICES SECTION === */
+    .services{
+      display:flex;
+      justify-content:center;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+
+    .service-card{
+      width:300px;
+      padding:24px;
+      border-radius:22px;
+      background:var(--card);
+      backdrop-filter:blur(12px);
+      box-shadow:0 10px 24px rgba(0,0,0,0.08);
+      text-align:center;
+    }
+
+    .service-card h3{
+      margin-bottom:10px;
+      color:#7a55bc;
+    }
+
+    .service-card p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* === PROJECTS SECTION === */
+    .projects{
+      max-width:900px;
+      margin:0 auto;
+    }
+
+    .project-item{
+      padding:22px;
+      margin-bottom:18px;
+      background:var(--card);
+      border-radius:18px;
+      backdrop-filter:blur(12px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .project-item strong{color:#7a55bc}
+
+    /* === ABOUT SECTION === */
+    .about-text{
+      max-width:750px;
+      margin:0 auto;
+      background:var(--card);
+      padding:32px;
+      border-radius:22px;
+      color:var(--muted);
+      backdrop-filter:blur(10px);
+      font-size:16px;
+      line-height:1.6;
+      box-shadow:0 6px 20px rgba(0,0,0,0.05);
+    }
+
+    /* === SKILLS === */
+    .skills{
+      text-align:center;
+    }
+
+    .badge{
+      display:inline-block;
+      background:#ffd8f5;
+      padding:8px 12px;
+      border-radius:999px;
+      margin:4px;
+      color:#b63f8f;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    /* === CONTACT CTA === */
+    .contact-cta{
+      text-align:center;
+      margin-top:20px;
+    }
+
+    .contact-cta a{
+      display:inline-block;
+      padding:14px 28px;
+      background:linear-gradient(90deg,var(--purple),var(--pink));
+      color:white;
+      border-radius:14px;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    /* === FOOTER === */
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      padding:30px 0;
+    }
+
+    @media(max-width:760px){
+      nav{padding:14px 24px;}
+      .hero-text h1{font-size:35px;}
+      .hero-img{width:180px;height:180px;}
+      section{padding:60px 20px;}
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">Yohan.</div>
+  <div>
+    <a href="#services">Layanan</a>
+    <a href="#projects">Proyek</a>
+    <a href="#about">Tentang</a>
+    <a href="#contact">Kontak</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-img">DG</div>
+  <div class="hero-text">
+    <h1>Bangun Solusi Kreatif & Digital Bersama Yohan</h1>
+    <p>Statistik Area • Digital Business • E-commerce • Pitch Deck</p>
+    <a href="#" class="cta-primary">Lihat Portofolio</a>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2 class="section-title">Layanan Utama</h2>
+
+  <div class="services">
+    <div class="service-card">
+      <h3>Analisis Data</h3>
+      <p>Mengolah data area & UMKM menjadi insight yang mudah dipahami.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Strategi Bisnis</h3>
+      <p>Membuat konsep bisnis digital, riset pasar, dan model strategi.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Web & Presentasi</h3>
+      <p>UI/UX dasar, landing page, pitch deck, dan materi promosi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">Proyek Pilihan</h2>
+
+  <div class="projects">
+
+    <div class="project-item">
+      <strong>CollRumbai.store</strong> — Platform UMKM berbasis web untuk toko & pengiriman.
+    </div>
+
+    <div class="project-item">
+      <strong>PalmFusion</strong> — Ide produk turunan sawit + strategi branding kompetisi.
+    </div>
+
+    <div class="project-item">
+      <strong>EduVerse</strong> — Konsep aplikasi edukasi gamifikasi.
+    </div>
+
+    <div class="project-item">
+      <strong>Proyek Laravel</strong> — Auth login, undangan digital, halaman presentasi.
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">Tentang Saya</h2>
+
+  <div class="about-text">
+    Saya adalah Yohan — bekerja sebagai Statistik Area di PT. Pokphand dan menempuh studi Bisnis Digital. 
+    Saya menyukai pengembangan konsep bisnis, analisis data, desain, serta pembuatan pitch deck yang efektif dan elegan.
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yohan — Sweet Elegance Website</title>
+
+  <style>
+    :root {
+      --pink:#ff7bcf;
+      --purple:#9f6aff;
+      --lavender:#f3eaff;
+      --white:#ffffff;
+      --text:#3c2b4a;
+      --muted:#8c839a;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Inter",sans-serif;}
+
+    body{
+      background:var(--lavender);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    /* ===== HEADER BAR ===== */
+    header{
+      width:100%;
+      padding:18px 40px;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:20;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      backdrop-filter:blur(12px);
+      background:rgba(255,255,255,0.5);
+      border-bottom:1px solid rgba(255,255,255,0.4);
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:800;
+      background:linear-gradient(90deg,var(--pink),var(--purple));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    nav a{
+      margin-left:28px;
+      text-decoration:none;
+      font-weight:600;
+      color:var(--text);
+      font-size:15px;
+    }
+    nav a:hover{color:var(--pink)}
+
+    /* ===== HERO SECTION ===== */
+    .hero{
+      width:100%;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:140px 20px 80px;
+      position:relative;
+    }
+
+    /* Background wave */
+    .hero::before{
+      content:"";
+      position:absolute;
+      bottom:-40px;
+      left:0;
+      width:100%;
+      height:300px;
+      background:radial-gradient(circle at top, #ffe6f8, #e9d9ff);
+      border-top-left-radius:60% 30%;
+      border-top-right-radius:60% 30%;
+      z-index:-1;
+    }
+
+    .hero-title{
+      font-size:52px;
+      font-weight:800;
+      background:linear-gradient(90deg,var(--pink),var(--purple));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero-sub{
+      max-width:600px;
+      margin-top:15px;
+      font-size:18px;
+      color:var(--muted);
+    }
+
+    .cta-main{
+      display:inline-block;
+      margin-top:30px;
+      padding:14px 28px;
+      border-radius:14px;
+      background:linear-gradient(90deg,var(--pink),var(--purple));
+      color:white;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:0 10px 25px rgba(150,83,255,0.25);
+    }
+
+    /* ===== SECTION UNIVERSAL ===== */
+    section{
+      width:100%;
+      padding:80px 40px;
+    }
+
+    .title{
+      text-align:center;
+      font-size:32px;
+      font-weight:800;
+      margin-bottom:50px;
+      color:#5f3f92;
+    }
+
+    /* ===== ABOUT SECTION ===== */
+    .about-card{
+      max-width:900px;
+      margin:0 auto;
+      background:var(--white);
+      padding:40px;
+      border-radius:30px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      color:var(--muted);
+      line-height:1.7;
+      font-size:17px;
+    }
+
+    /* ===== SERVICES NEW STYLE ===== */
+    .services{
+      display:flex;
+      justify-content:center;
+      gap:26px;
+      flex-wrap:wrap;
+    }
+
+    .service{
+      width:280px;
+      padding:26px;
+      border-radius:22px;
+      background:var(--white);
+      box-shadow:0 8px 18px rgba(0,0,0,0.07);
+      text-align:center;
+      transition:0.25s;
+    }
+
+    .service:hover{
+      transform:translateY(-6px);
+      box-shadow:0 12px 25px rgba(0,0,0,0.09);
+    }
+
+    .service h3{
+      margin-bottom:10px;
+      color:#6d47b3;
+    }
+
+    .service p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* ===== PROJECTS ===== */
+    .project-list{
+      max-width:900px;
+      margin:0 auto;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .project{
+      padding:24px;
+      background:var(--white);
+      border-radius:20px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.06);
+      font-size:16px;
+      color:var(--muted);
+    }
+
+    .project strong{
+      color:#7d55c5;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills{
+      text-align:center;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:10px 16px;
+      margin:6px;
+      background:#ffe0f7;
+      color:#aa3f8d;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-box{
+      text-align:center;
+      margin-top:20px;
+    }
+
+    .contact-box a{
+      padding:14px 26px;
+      text-decoration:none;
+      background:linear-gradient(90deg,var(--purple),var(--pink));
+      border-radius:14px;
+      color:white;
+      font-weight:700;
+    }
+
+    /* ===== FOOTER ===== */
+    footer{
+      text-align:center;
+      padding:40px 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Yohan.</div>
+  <nav>
+    <a href="#about">Tentang</a>
+    <a href="#services">Layanan</a>
+    <a href="#projects">Proyek</a>
+    <a href="#contact">Kontak</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h1 class="hero-title">Halo, Saya Yohan</h1>
+  <p class="hero-sub">
+    Statistik Area | Bisnis Digital | UMKM | E-commerce | Pitch Deck  
+    Mengubah ide menjadi solusi visual dan strategi nyata.
+  </p>
+  <a href="#" class="cta-main">Lihat Portofolio</a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="title">Tentang Saya</h2>
+  <div class="about-card">
+    Saya adalah Yohan — seorang pekerja Statistik Area yang juga menempuh studi Bisnis Digital. 
+    Saya memiliki minat dalam analisis data, pengembangan bisnis digital, serta pembuatan presentasi visual 
+    yang elegan dan mudah dipahami. Saya senang membantu UMKM, membuat konsep digital commerce, dan menyusun pitch deck profesional.
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2 class="title">Apa yang Saya Kerjakan?</h2>
+
+  <div class="services">
+    <div class="service">
+      <h3>Analisis Data</h3>
+      <p>Insight sederhana & efektif untuk operasi dan UMKM.</p>
+    </div>
+    <div class="service">
+      <h3>Strategi Digital</h3>
+      <p>Riset pasar, konsep model bisnis, dan ide e-commerce.</p>
+    </div>
+    <div class="service">
+      <h3>Web & Presentasi</h3>
+      <p>Landing page, UI dasar, pitch deck, & materi promosi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="title">Proyek Terbaru</h2>
+
+  <div class="project-list">
+    <div class="project"><strong>CollRumbai.store</strong> — Platform UMKM untuk toko & pengiriman.</div>
+    <div class="project"><strong>PalmFusion</strong> — Ide produk sawit & strategi branding kompetisi.</div>
+    <div class="project"><strong>EduVerse</strong> — Konsep aplikasi edukasi berbasis gamifikasi.</div>
+    <div class="project"><strong>Laravel Projects</strong> — Auth, undangan digital, halaman presentasi.</div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section>
+  <h2 class="title">Keahlian</h2>
+
+  <div class="skills">
+    <span class="badge">Analisis Data</span>
+    <span class="badge">Business Strategy</span>
+    <span class="badge">Laravel / PHP</span>
+    <span class="badge">UI/UX Dasar</span>
+    <span class="badge">Pitch Deck</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="title">Hubungi Saya</h2>
+
+  <div class="contact-box">
+    <a href="mailto:KimYohan@example.com">Kirim Email</a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Yohan — Memberikan kesan manis dan ikonik
+</footer>
+
+</body>
+</html>
+

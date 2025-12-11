@@ -1,0 +1,240 @@
+/* ============================================ */
+/* SWEET ELEGANCE WEBSITE — YOHAN (CSS FULL)    */
+/* ============================================ */
+
+:root {
+  --pink:#ff7bcf;
+  --purple:#9f6aff;
+  --lavender:#f3eaff;
+  --white:#ffffff;
+  --text:#3c2b4a;
+  --muted:#8c839a;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Inter",sans-serif;
+}
+
+body{
+  background:var(--lavender);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* ===== HEADER BAR ===== */
+header{
+  width:100%;
+  padding:18px 40px;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:20;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,0.5);
+  border-bottom:1px solid rgba(255,255,255,0.4);
+}
+
+.logo{
+  font-size:24px;
+  font-weight:800;
+  background:linear-gradient(90deg,var(--pink),var(--purple));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+nav a{
+  margin-left:28px;
+  text-decoration:none;
+  font-weight:600;
+  color:var(--text);
+  font-size:15px;
+}
+nav a:hover{color:var(--pink)}
+
+/* ===== HERO SECTION ===== */
+.hero{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:140px 20px 80px;
+  position:relative;
+}
+
+/* Background wave */
+.hero::before{
+  content:"";
+  position:absolute;
+  bottom:-40px;
+  left:0;
+  width:100%;
+  height:300px;
+  background:radial-gradient(circle at top, #ffe6f8, #e9d9ff);
+  border-top-left-radius:60% 30%;
+  border-top-right-radius:60% 30%;
+  z-index:-1;
+}
+
+.hero-title{
+  font-size:52px;
+  font-weight:800;
+  background:linear-gradient(90deg,var(--pink),var(--purple));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-sub{
+  max-width:600px;
+  margin-top:15px;
+  font-size:18px;
+  color:var(--muted);
+}
+
+.cta-main{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 28px;
+  border-radius:14px;
+  background:linear-gradient(90deg,var(--pink),var(--purple));
+  color:white;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(150,83,255,0.25);
+}
+
+/* ===== SECTION UNIVERSAL ===== */
+section{
+  width:100%;
+  padding:80px 40px;
+}
+
+.title{
+  text-align:center;
+  font-size:32px;
+  font-weight:800;
+  margin-bottom:50px;
+  color:#5f3f92;
+}
+
+/* ===== ABOUT ===== */
+.about-card{
+  max-width:900px;
+  margin:0 auto;
+  background:var(--white);
+  padding:40px;
+  border-radius:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+  color:var(--muted);
+  line-height:1.7;
+  font-size:17px;
+}
+
+/* ===== SERVICES ===== */
+.services{
+  display:flex;
+  justify-content:center;
+  gap:26px;
+  flex-wrap:wrap;
+}
+
+.service{
+  width:280px;
+  padding:26px;
+  border-radius:22px;
+  background:var(--white);
+  box-shadow:0 8px 18px rgba(0,0,0,0.07);
+  text-align:center;
+  transition:0.25s;
+}
+
+.service:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.09);
+}
+
+.service h3{
+  margin-bottom:10px;
+  color:#6d47b3;
+}
+
+.service p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* ===== PROJECT LIST ===== */
+.project-list{
+  max-width:900px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.project{
+  padding:24px;
+  background:var(--white);
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  font-size:16px;
+  color:var(--muted);
+}
+
+.project strong{
+  color:#7d55c5;
+}
+
+/* ===== SKILLS ===== */
+.skills{
+  text-align:center;
+}
+
+.badge{
+  display:inline-block;
+  padding:10px 16px;
+  margin:6px;
+  background:#ffe0f7;
+  color:#aa3f8d;
+  border-radius:999px;
+  font-weight:600;
+  font-size:14px;
+}
+
+/* ===== CONTACT ===== */
+.contact-box{
+  text-align:center;
+  margin-top:20px;
+}
+
+.contact-box a{
+  padding:14px 26px;
+  text-decoration:none;
+  background:linear-gradient(90deg,var(--purple),var(--pink));
+  border-radius:14px;
+  color:white;
+  font-weight:700;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:40px 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:760px){
+  header{padding:16px 20px;}
+  .hero-title{font-size:38px;}
+  section{padding:60px 20px;}
+}
